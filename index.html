@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,20 +8,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script>
     console.log("WebUSB API")
+    document.addEventListener('DOMContentLoaded', event => {
+      let connectButton = document.querySelector("#connect");
+      connectButton.addEventListener('click', function () {
 
-    navigator.usb.getDevices()
-      .then(devices => {
-        devices.map(device => {
-          console.log(device.productName);      
-          console.log(device.manufacturerName);
-          console.log(device);
-        })
-        ;
-      })
-    ;
+        navigator.usb.getDevices()
+          .then(devices => {
+            devices.map(device => {
+              console.log(device.productName);
+              console.log(device.manufacturerName);
+              console.log(device);
+            })
+              ;
+          })
+          ;
+
+      });
+    });
+
   </script>
 </head>
+
 <body>
+  <button id="connect">Connect</button>
   Look at the Console!
 </body>
+
 </html>
