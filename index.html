@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>WebUSB API Demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    console.log("WebUSB API")
+
+    navigator.usb.getDevices()
+      .then(devices => {
+        devices.map(device => {
+          console.log(device.productName);      
+          console.log(device.manufacturerName);
+          console.log(device);
+        })
+        ;
+      })
+    ;
+  </script>
+</head>
+<body>
+  Look at the Console!
+</body>
+</html>
